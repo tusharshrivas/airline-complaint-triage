@@ -1,0 +1,28 @@
+# Free LLM providers. Limits were read from the providers' public documentation on the
+# date in `limits_checked` (see ASSUMPTIONS.md). They change - re-check before long runs.
+# The client multiplies rpm/tpm/rpd/tpd by llm.safety_factor in experiment.yaml.
+groq:
+  endpoint: https://api.groq.com/openai/v1
+  key_env: GROQ_API_KEY
+  # First id in this list that GET /openai/v1/models reports as available is used.
+  model_preference: [llama-3.1-8b-instant, llama-3.3-70b-versatile]
+  limits: {rpm: 30, rpd: 14400, tpm: 6000, tpd: 500000}
+  limits_model: llama-3.1-8b-instant
+  limits_source: https://console.groq.com/docs/rate-limits
+  limits_checked: "2026-10-06"
+gemini:
+  endpoint: https://generativelanguage.googleapis.com/v1beta
+  key_env: GEMINI_API_KEY
+  model_preference: [gemini-2.5-flash-lite]
+  # Docs list 15 RPM for 2.5 Flash-Lite; secondary sources report 10 RPM. Using the lower value.
+  limits: {rpm: 10, rpd: 1000, tpm: 250000, tpd: null}
+  limits_model: gemini-2.5-flash-lite
+  limits_source: https://ai.google.dev/gemini-api/docs/rate-limits
+  limits_checked: "2026-10-06"
+ollama:
+  endpoint: http://localhost:11434
+  host_env: OLLAMA_HOST
+  model_preference: [qwen2.5:3b, llama3.2:3b]
+  limits: {rpm: null, rpd: null, tpm: null, tpd: null}
+  limits_source: "local - no remote limits"
+  limits_checked: "2026-10-06"

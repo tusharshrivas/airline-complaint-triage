@@ -1,0 +1,7 @@
+{
+  "provider": "groq",
+  "date_utc": "2026-10-06 12:01:49 UTC",
+  "seed": 42,
+  "status": "skipped",
+  "reason": "GROQ_API_KEY is not set"
+}

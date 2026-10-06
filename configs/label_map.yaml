@@ -1,0 +1,23 @@
+# Maps the dataset's `negativereason` values to the 6 routing classes.
+# Rationale for every grouping is recorded in ASSUMPTIONS.md.
+classes:
+  customer_service:
+    - Customer Service Issue
+    - Flight Attendant Complaints
+  delay_or_cancellation:
+    - Late Flight
+    - Cancelled Flight
+  baggage:
+    - Lost Luggage
+    - Damaged Luggage
+  booking_or_fare:
+    - Flight Booking Problems
+  flight_crew_or_flight:
+    - Bad Flight
+  other:
+    - longlines
+# Rows with these reasons are dropped (annotators could not decide).
+excluded_reasons:
+  - "Can't Tell"
+# Any reason not listed above is mapped to this class.
+unmapped_to: other

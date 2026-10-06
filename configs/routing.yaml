@@ -1,0 +1,9 @@
+# ILLUSTRATIVE routing table. These queue names/priorities are assumptions made for the
+# demo; they are not taken from any real airline (see ASSUMPTIONS.md).
+queues:
+  customer_service: {queue: "Customer Care - Tier 1", priority: "P2", target_response: "4 hours"}
+  delay_or_cancellation: {queue: "Disruption Desk", priority: "P1", target_response: "1 hour"}
+  baggage: {queue: "Baggage Services", priority: "P2", target_response: "4 hours"}
+  booking_or_fare: {queue: "Reservations & Fares", priority: "P3", target_response: "8 hours"}
+  flight_crew_or_flight: {queue: "Customer Relations - Cabin Experience", priority: "P3", target_response: "24 hours"}
+  other: {queue: "General Triage (manual review)", priority: "P3", target_response: "24 hours"}

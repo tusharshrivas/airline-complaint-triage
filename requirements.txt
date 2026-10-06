@@ -1,0 +1,14 @@
+# Pinned to the versions this project was built and tested with (Python 3.12).
+# All packages are free/open source. No paid SDKs: LLM calls use plain HTTP via `requests`.
+scikit-learn==1.8.0
+xgboost==3.4.1
+pandas==3.0.2
+numpy==2.4.4
+scipy==1.17.1
+PyYAML==6.0.3
+requests==2.33.1
+streamlit==1.65.0
+matplotlib==3.10.8
+pytest==9.1.1
+ruff==0.16.10
+joblib==1.5.3

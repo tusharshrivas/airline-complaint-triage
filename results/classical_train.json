@@ -1,0 +1,81 @@
+{
+  "n_features": 47694,
+  "vectorizer_fit_s": 0.7407877000514418,
+  "models": {
+    "tfidf_logreg": {
+      "best_params": {
+        "C": 1
+      },
+      "val_macro_f1": 0.6146694930176766,
+      "tuning_grid": [
+        {
+          "C": 0.1,
+          "val_macro_f1": 0.5853845483645371,
+          "fit_s": 0.9155774000100791
+        },
+        {
+          "C": 1,
+          "val_macro_f1": 0.6146694930176766,
+          "fit_s": 2.142142199911177
+        },
+        {
+          "C": 10,
+          "val_macro_f1": 0.599517185725902,
+          "fit_s": 3.8463081000372767
+        }
+      ],
+      "final_fit_s": 2.142142199911177,
+      "tuning_total_s": 6.919799600029364,
+      "train_time_s": 2.882929899962619,
+      "model_size_bytes": 2323951,
+      "latency_ms_mean": 1.9950159996127088,
+      "latency_n": 300
+    },
+    "tfidf_xgboost": {
+      "best_params": {
+        "max_depth": 3,
+        "learning_rate": 0.3,
+        "best_iteration": 147
+      },
+      "val_macro_f1": 0.5985569012135695,
+      "tuning_grid": [
+        {
+          "max_depth": 3,
+          "learning_rate": 0.15,
+          "val_macro_f1": 0.5863088517416905,
+          "best_iteration": 149,
+          "fit_s": 257.836503099883
+        },
+        {
+          "max_depth": 3,
+          "learning_rate": 0.3,
+          "val_macro_f1": 0.5985569012135695,
+          "best_iteration": 147,
+          "fit_s": 249.42685650009662
+        },
+        {
+          "max_depth": 6,
+          "learning_rate": 0.15,
+          "val_macro_f1": 0.5734806467865011,
+          "best_iteration": 147,
+          "fit_s": 331.9154410001356
+        },
+        {
+          "max_depth": 6,
+          "learning_rate": 0.3,
+          "val_macro_f1": 0.5725239076433087,
+          "best_iteration": 86,
+          "fit_s": 244.03617600002326
+        }
+      ],
+      "final_fit_s": 249.42685650009662,
+      "tuning_total_s": 1083.4537236997858,
+      "train_time_s": 250.16764420014806,
+      "model_size_bytes": 619700,
+      "latency_ms_mean": 1.6503679992941518,
+      "latency_n": 300
+    }
+  },
+  "best_by_val": "tfidf_logreg",
+  "selection_rule": "highest validation macro-F1 (test split not used)"
+}

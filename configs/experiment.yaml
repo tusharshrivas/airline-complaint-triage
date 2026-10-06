@@ -1,0 +1,33 @@
+seed: 42
+split: {train: 0.70, val: 0.15, test: 0.15}
+# Drop rows whose cleaned, lower-cased text is identical to an earlier row
+# (retweets / duplicate submissions) so they cannot leak across splits.
+dedupe_cleaned_text: true
+
+classical:
+  tfidf_word: {ngram_range: [1, 2], min_df: 2, max_features: 30000}
+  tfidf_char: {ngram_range: [3, 5], min_df: 2, max_features: 60000}
+  logreg: {C_grid: [0.1, 1, 10], max_iter: 2000}
+  xgboost:
+    max_depth_grid: [3, 6]
+    learning_rate_grid: [0.15, 0.3]
+    n_estimators: 150
+    early_stopping_rounds: 20
+    n_jobs: 1
+
+llm:
+  prompt_file: prompts/triage_v1.md
+  prompt_version: triage_v1
+  prompt_modes: [zero_shot, few_shot]
+  # Prompt choice (zero vs few-shot) uses a stratified VALIDATION subsample only,
+  # to stay inside free-tier token quotas. Test set is never used for the choice.
+  val_subsample: 300
+  max_retries: 3
+  max_output_tokens: 120
+  # Fraction of the documented free-tier limits the client allows itself to use.
+  safety_factor: 0.8
+  # If a 429 asks us to wait longer than this, treat it as a daily quota hit and stop gracefully.
+  max_wait_s: 120
+
+bootstrap: {n_resamples: 1000, seed: 42}
+error_analysis: {n_examples: 20}

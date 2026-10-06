@@ -1,0 +1,17 @@
+{
+  "repaired_text": {
+    "C": 1,
+    "val_macro_f1": 0.6146694930176766,
+    "test_macro_f1": 0.5920720934296221
+  },
+  "raw_unrepaired_text": {
+    "C": 1,
+    "val_macro_f1": 0.6180718955836662,
+    "test_macro_f1": 0.5900129652857814
+  },
+  "test_rows_with_artifact": 208,
+  "test_rows_total": 1186,
+  "artifact_share_all_rows": 0.15922035185419567,
+  "repaired_model_accuracy_on_artifact_rows": 0.7788461538461539,
+  "repaired_model_accuracy_on_clean_rows": 0.6983640081799591
+}
