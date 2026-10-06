@@ -2,15 +2,11 @@
 .env
 .streamlit/secrets.toml
 
-# data (license: do not redistribute raw tweets)
-data/raw/
-data/processed/
-cache/
+/data/raw/
+/data/processed/
+/cache/
+/models/
 
-# trained models (use deploy_model/ for the small committed deployment model)
-models/
-
-# python
 .venv/
 __pycache__/
 *.pyc
